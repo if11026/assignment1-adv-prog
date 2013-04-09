@@ -95,7 +95,7 @@ public class Downloader extends SwingWorker<Void, Void> {
             setProgress(0);
             while (((data = raf.read()) != -1) && raf.getFilePointer() <= end) {
                 byte byteData = (byte) data;
-                setProgress((int) (100 * cnt / (double) (end - start)));
+                setProgress((int) (100 * cnt / (double) (end - start+1)));
                 fout.write(byteData);
                 cnt++;
             }
