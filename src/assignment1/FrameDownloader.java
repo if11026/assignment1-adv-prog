@@ -209,9 +209,9 @@ public class FrameDownloader extends javax.swing.JFrame {
         
         for (int i = 0; i < threads.length; i++) {
             if (i + 1 == threads.length) {
-                threads[i] = new Downloader(i, i * bytePerBlock, i * bytePerBlock + bytePerBlock + residue, selectedFile, statuses);
+                threads[i] = new Downloader(i, i * bytePerBlock, i * bytePerBlock + bytePerBlock + residue-1, selectedFile, statuses);
             } else {
-                threads[i] = new Downloader(i, i * bytePerBlock, i * bytePerBlock + bytePerBlock, selectedFile, statuses);
+                threads[i] = new Downloader(i, i * bytePerBlock, i * bytePerBlock + bytePerBlock-1, selectedFile, statuses);
             }
             threads[i].addPropertyChangeListener(new PropertyChangeListener() {
 
